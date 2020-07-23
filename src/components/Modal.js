@@ -27,17 +27,22 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    margin:"0 auto",
     width: "100%",
+    height:"50%"
   },
   container: {
     maxHeight: "440",
   },
   paper: {
     position: "absolute",
-    width: 800,
+    width: 600,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    [theme.breakpoints.down("md")] :{
+      width:"90%"
+    }
   },
   align: {
       textAlign: "left",
@@ -45,7 +50,18 @@ const useStyles = makeStyles((theme) => ({
     },
     margin: {
         margin: theme.spacing(1),
+        width:"47%",
+        [theme.breakpoints.down("xs")] :{
+          width:"100%"
+        }
     },
+    marginFullWidthInput: {
+      margin: theme.spacing(1),
+      width:"100%",
+      [theme.breakpoints.down("xs")] :{
+        width:"100%"
+      }
+  },
     box: {
         flexGrow: 1,
   },
@@ -123,7 +139,7 @@ boton: "Create"
             </Typography>
           )}
           <Divider />
-          <Box display="flex" justifyContent="space-between">
+          <Box display="flex" justifyContent="space-between" flexWrap="wrap">
             <TextField
               value={nombre}
               className={clases.margin}
@@ -141,7 +157,7 @@ boton: "Create"
               fullWidth
             />
           </Box>
-          <Box display="flex" justifyContent="space-between">
+          <Box display="flex" justifyContent="space-between" flexWrap="wrap">
             <TextField
               name="Email"
               label="Email"
@@ -160,15 +176,17 @@ boton: "Create"
               fullWidth
             />
           </Box>
+          
           <TextField
             value={Direccion}
             name="Direccion"
             label="Direccion"
-            className={clases.margin}
+            className={clases.marginFullWidthInput}
             onChange={cambiarState("Direccion")}
             fullWidth
           />
-          <Box display="flex" justifyContent="space-between">
+          
+          <Box display="flex" justifyContent="space-between" flexWrap="wrap">
             <TextField
               name=""
               label="Paquete contradado"
@@ -176,7 +194,7 @@ boton: "Create"
               fullWidth
             />
 
-            <Box width="40%" display="flex">
+            <Box width="50%" display="flex">
               <FormControl component="fieldset">
                 <FormLabel component="legend">Estado</FormLabel>
                 <RadioGroup
@@ -212,7 +230,7 @@ boton: "Create"
               <Button
                 variant="contained"
                 color="primary"
-                className={clases.margin}
+                
                 type="submit"
                 onClick={handleSubmitAgregar}
               >
@@ -222,17 +240,18 @@ boton: "Create"
               <Button
                 variant="contained"
                 color="primary"
-                className={clases.margin}
+                
                 type="submit"
                 onClick={handleSubmit}
               >
                 Guardar
               </Button>
             )}
+            <Box m={1}></Box>
             <Button
               variant="contained"
               color="secondary"
-              className={clases.margin}
+              
               onClick={() => {
                 props.handleClose();
                 seteditar(false);

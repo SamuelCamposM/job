@@ -58,6 +58,7 @@ const columnas = [
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+     
   },
   container: {
     maxHeight: "440",

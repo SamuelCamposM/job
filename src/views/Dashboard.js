@@ -62,33 +62,40 @@ const Contenedor = () => {
       <div className={clases.content}>
         <div className={clases.toolbar}></div>
         {/* //aca ira el contenido de la pagina */}
-        <Box display="flex" justifyContent="space-around">
+        <Box display="flex" justifyContent="space-around" flexWrap="wrap" width="100%" mb={2}>
+        <Box width="300px" flexGrow="1" mb={2} ml={1} mr={1}>
           <Tarjeta
             contenido="Total de SMS enviados el dia de hoy."
             icono={<Textsms />}
             titulo="Total enviados hoy."
             subheader="34033."
           />
-          <Tarjeta
+          </Box>
+          <Box width="300px" flexGrow="1" mb={2} ml={1} mr={1}>
+          <Tarjeta 
             contenido="Total de SMS enviados."
             icono={<BarChart />}
             titulo="Total enviados."
             subheader="8388838."
           />
+          </Box>
+          <Box width="300px" flexGrow="1" mb={2} ml={1} mr={1}>
           <Tarjeta
             contenido="Paquete de SMS cargados."
             icono={<AddShoppingCart />}
             titulo="Paquetes cargados"
             subheader="5000."
           />
+          </Box>
         </Box>
         <Box
           display="flex"
           justifyContent="space-around"
           mt={4}
           className={clases.border}
+          flexWrap="wrap"
         >
-          <Box width="45%">
+          <Box maxWidth="500px"  flexGrow="1" mb={2}>
             <Typography variant="h5" color="initial">
               Enviar SMS.
             </Typography>
@@ -152,7 +159,7 @@ const Contenedor = () => {
               </Button>
             </Box>
           </Box>
-          <Box width="50%">
+          <Box width="100%">
             <Typography variant="h5" color="initial">
               SMS enviados hoy.
             </Typography>

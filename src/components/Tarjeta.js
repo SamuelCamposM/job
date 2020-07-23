@@ -16,8 +16,8 @@ import { Divider, Icon } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 325,
-    width: "325px",
+    
+    width: "100%",
     display: "flex",
     flexDirection: "column",
 
